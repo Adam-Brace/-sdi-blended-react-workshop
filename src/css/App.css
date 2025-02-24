@@ -16,3 +16,7 @@ body {
 .pokemon {
 	margin: 10px;
 }
+
+.pokemon:hover {
+	border-width: 1.5px;
+}

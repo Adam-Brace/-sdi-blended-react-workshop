@@ -14,7 +14,8 @@ const Pokemon = ({ num }) => {
 			.then((data) => {
 				setSprite(data.sprites.front_default);
 				setName(data.name);
-			});
+			})
+			.catch((error) => console.log("error", error));
 	});
 
 	return (
@@ -28,11 +29,13 @@ const Pokemon = ({ num }) => {
 			>
 				<Card.Img
 					variant="top"
-					style={{ backgroundColor: "#11b652" }}
+					style={{ backgroundColor: "#2d5976" }}
 					src={sprite}
 				/>
 				<Card.Body>
-					<Card.Title>{name}</Card.Title>
+					<Card.Title style={{ textAlign: "center" }}>
+						{name}
+					</Card.Title>
 				</Card.Body>
 			</Card>
 		</>
