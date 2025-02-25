@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Pokemon from "./Pokemon";
 
 const Home = () => {
@@ -8,8 +9,9 @@ const Home = () => {
 
 	return (
 		<>
-			<h1 className="text-center my-4">Pokédex Generation 1</h1>
+			<h1 className="text-center my-4">Pokedex Generation 1</h1>
 			{/* Adds vertical margin */}
+
 			<div className="pokedex-container">{pokemon}</div>
 		</>
 	);

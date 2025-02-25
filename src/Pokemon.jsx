@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
-import FocusContext from "./FocusContext";
+import { Link } from "react-router";
 
 const Pokemon = ({ num }) => {
 	const [name, setName] = useState("");
 	const [sprite, setSprite] = useState("");
-	const { setFocus } = useContext(FocusContext);
 
 	useEffect(() => {
 		fetch(`https://pokeapi.co/api/v2/pokemon-form/${num}/`)
@@ -19,26 +18,16 @@ const Pokemon = ({ num }) => {
 	});
 
 	return (
-		<>
-			<Card
-				className="pokemon"
-				style={{ width: "10rem" }}
-				onClick={() => {
-					setFocus({ id: num, inFocus: true });
-				}}
-			>
-				<Card.Img
-					variant="top"
-					style={{ backgroundColor: "#2d5976" }}
-					src={sprite}
-				/>
-				<Card.Body>
+		<Link to={`/focus/${num}`}>
+			<Card className="pokemon" style={{ width: "10rem" }}>
+				<Card.Img variant="top" src={sprite} />
+				<Card.Body style={{ borderTop: "solid" }}>
 					<Card.Title style={{ textAlign: "center" }}>
 						{name}
 					</Card.Title>
 				</Card.Body>
 			</Card>
-		</>
+		</Link>
 	);
 };
 

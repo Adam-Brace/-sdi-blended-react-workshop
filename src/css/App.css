@@ -15,8 +15,32 @@ body {
 
 .pokemon {
 	margin: 10px;
+	border: 1px solid;
+	transition: border-width 0.2s ease;
+	text-decoration: none;
 }
 
 .pokemon:hover {
 	border-width: 1.5px;
+}
+
+.moves {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	max-height: 500px;
+}
+
+.card-focus {
+	width: 90%;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.bi {
+	float: right;
+	fill: white;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
 }
